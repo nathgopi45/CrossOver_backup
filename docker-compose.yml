@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  crossblogs-app:
+    image: crossblogs
+    ports:
+      - 8080:8080
+    depends_on:
+      - crossblogs-mysql
+
+  crossblogs-mysql:
+    extends:
+        file: mysql.yml
+        service: crossblogs-mysql
